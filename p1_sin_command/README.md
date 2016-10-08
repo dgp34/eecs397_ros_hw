@@ -1,6 +1,6 @@
 # p1_sin_commander
 
-This package addresses P1:  Create a sin commander that prompts for amplitude and frequency and *commands* the minimal controller to set appropriate sinusoidal velocities.
+This package addresses P1:  Create a sin commander that prompts for amplitude and frequency and commands the minimal controller to set appropriate sinusoidal velocities.
 
 ## How to Run
 
