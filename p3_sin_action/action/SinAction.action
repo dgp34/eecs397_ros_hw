@@ -1,0 +1,10 @@
+#goal
+float64 amplitude
+float64 frequency
+float64 cycles
+---
+#result
+bool completed
+---
+#feedback
+bool feedback
