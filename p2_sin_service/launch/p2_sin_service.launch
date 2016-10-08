@@ -1,0 +1,7 @@
+<launch>
+
+<node name="min_ctrl2" pkg="p2_sin_service" type="min_ctrl2" />
+<node name="min_sim2" pkg="p2_sin_service" type="min_sim2" />
+<node name="sin_command2" pkg="p2_sin_service" type="sin_command2" />
+
+</launch>
