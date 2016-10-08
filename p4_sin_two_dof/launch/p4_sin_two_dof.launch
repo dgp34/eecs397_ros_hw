@@ -1,0 +1,16 @@
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <param name="robot_description"
+   textfile="$(find p4_sin_two_dof)/two_dof_description.urdf"/>
+
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+     args="-param robot_description -urdf -model two_dof_robot" />
+
+
+  <node name= "two_dof_joint_controller" pkg="p4_sin_two_dof" type= "two_dof_joint_controller" />
+  <node name= "sin_command4" pkg= "p4_sin_two_dof" type= "sin_command4" />
+
+</launch>
