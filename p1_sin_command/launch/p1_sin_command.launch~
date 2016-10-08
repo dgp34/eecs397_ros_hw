@@ -1,0 +1,7 @@
+<launch>
+
+<node name="min_ctrl" pkg="p1_sin_command" type="min_ctrl" />
+<node name="min_sim" pkg="p1_sin_command" type="min_sim" />
+<node name="sin_command" pkg="p1_sin_command" type="sin_command" />
+
+</launch>
