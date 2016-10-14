@@ -1,0 +1,21 @@
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find p5_ros_ctrl)/control_config/three_dof_ctrl_params.yaml" command="load"/>
+  <param name="robot_description" 
+     textfile="$(find p5_ros_ctrl)/three_dof_description.urdf"/>
+
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+     args="-param robot_description -urdf -model three_dof_robot" />
+  
+  <!--start up the controller plug-ins via the controller manager -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/three_dof_robot" args="joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller"/>
+
+  <!--start joint sin commander -->
+  <node name= "sin_command5" pkg= "p5_ros_ctrl" type= "sin_command5" />
+
+</launch>
